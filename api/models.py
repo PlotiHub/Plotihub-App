@@ -9,11 +9,11 @@ class Property(models.Model):
     number_of_units = models.IntegerField()
     water_rate = models.IntegerField()
     electricity_rate = models.IntegerField(default=0)
-    mpesa_paybill = models.CharField(max_length=30)
+    mpesa_paybill = models.IntegerField()
     address = models.CharField(max_length=30)
     city = models.CharField(max_length=30)
     state = models.CharField(max_length=30)
-    zip = models.CharField(max_length=30)
+    # zip = models.CharField(max_length=30)
     # landlord = models.ForeignKey(Landlord, 
     #                             on_delete=models.CASCADE,
     #                             related_name="landlords")
