@@ -26,9 +26,9 @@ SECRET_KEY = 'django-insecure-rc^*w^w&6g9_(uvx#6s*bnt!w)l0rdi%!l7mv#y%uc&x%wo5pk
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://plotihubs.vercel.app/']
+ALLOWED_HOSTS = ['https://plotihub.up.railway.app/']
 CORS_ALLOWED_ORIGINS = [
-    'https://plotihubs.vercel.app',
+    'https://plotihubs-v2.vercel.app',
 ]
 # FORM SUBMISSION
 # Comment out the following line and place your railway URL, and your production URL in the array.
