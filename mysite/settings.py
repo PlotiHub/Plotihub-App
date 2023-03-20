@@ -79,37 +79,23 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'mysite.wsgi.application'
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'railway',
+#         'USER': 'postgres',
+#         'PASSWORD': 'FxhWl5CwBWnnTIYBza1c',
+#         'HOST': 'containers-us-west-166.railway.app',
+#         'PORT': '6237',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'railway',
-        'USER': 'postgres',
-        'PASSWORD': 'FxhWl5CwBWnnTIYBza1c',
-        'HOST': 'containers-us-west-166.railway.app',
-        'PORT': '6237',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
-# Database
-# https://docs.djangoproject.com/en/4.0/ref/settings/#databases
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': os.environ["plotihub"],
-#         'USER': os.environ["ploti"],
-#         'PASSWORD': os.environ["FxhWl5CwBWnnTIYBza1c"],
-#         'HOST': os.environ["containers-us-west-166.railway.app"],
-#         'PORT': os.environ["6237"],
-#     }
-# }
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
 
 
 # Password validation

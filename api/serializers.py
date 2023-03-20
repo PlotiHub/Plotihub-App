@@ -19,7 +19,7 @@ class LandlordSerializer(serializers.ModelSerializer):
 
 
 class PropertySerializer(serializers.ModelSerializer):
-    landlord = LandlordSerializer(many=True, read_only=True)
+    # landlord = LandlordSerializer(many=True, read_only=True)
     tenants = TenantSerializer(many=True, read_only=True)
     class Meta:
         model = Property

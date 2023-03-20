@@ -1,8 +1,19 @@
 from django.db import models
-from django.contrib.auth.models import User
+# from django.contrib.auth.models import User
 
 
 # Create your models here.
+class Landlord(models.Model):
+    # user = models.ForeignKey(User, on_delete=models.CASCADE, default=0)
+    landlord_name = models.CharField(max_length=30)
+    email = models.CharField(max_length=30)
+    phone = models.IntegerField() 
+    # property = models.ForeignKey(Property, 
+    #                             on_delete=models.CASCADE,
+    #                             related_name="landlord")
+    def __str__(self):
+        return self.landlord_name + " " + self.email
+
 
 class Property(models.Model):
     property_name = models.CharField(max_length=30)
@@ -14,24 +25,14 @@ class Property(models.Model):
     city = models.CharField(max_length=30)
     state = models.CharField(max_length=30)
     zip = models.CharField(max_length=30)
-    # landlord = models.ForeignKey(Landlord, 
-    #                             on_delete=models.CASCADE,
-    #                             related_name="landlords")
+    landlord = models.ForeignKey(Landlord, 
+                                on_delete=models.CASCADE,
+                                related_name="landlords")
 
     def __str__(self):
         return self.property_name
 
 
-class Landlord(models.Model):
-    # user = models.ForeignKey(User, on_delete=models.CASCADE, default=0)
-    landlord_name = models.CharField(max_length=30)
-    email = models.CharField(max_length=30)
-    phone = models.IntegerField() 
-    property = models.ForeignKey(Property, 
-                                on_delete=models.CASCADE,
-                                related_name="landlord")
-    def __str__(self):
-        return self.landlord_name + " " + str(self.phone)
 
 
 # Start of Tenant model
