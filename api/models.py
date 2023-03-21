@@ -74,9 +74,9 @@ class Payment(models.Model):
                                 on_delete=models.CASCADE,
                                 related_name="payment")
 
-    lease_id = models.ForeignKey(Lease, 
-                                on_delete=models.CASCADE,
-                                related_name="payment")
+    # lease_id = models.ForeignKey(Lease, 
+    #                             on_delete=models.CASCADE,
+    #                             related_name="payment")
 
     property_id = models.ForeignKey(Property, 
                                 on_delete=models.CASCADE,
