@@ -78,9 +78,10 @@ class Payment(models.Model):
     #                             on_delete=models.CASCADE,
     #                             related_name="payment")
 
-    property_id = models.ForeignKey(Property, 
-                                on_delete=models.CASCADE,
-                                related_name="payment")
+    # property_id = models.ForeignKey(Property, 
+    #                             on_delete=models.CASCADE,
+    #                             related_name="payment")
+    
     status = models.BooleanField(default=False)
     payment_date = models.DateTimeField()
     payment_amount = models.IntegerField()
