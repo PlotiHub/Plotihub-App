@@ -1,6 +1,6 @@
 # PlotiHub
 
-PlotiHub aims to be the leading open-source property management software in Kenya. Providing a platform for harmoniuos and friendly rent collection process.</br>
+PlotiHub aims to be the leading open-source property management software in Kenya. Providing a platform for harmonious and friendly rent collection process.</br>
 
 <sup>Want to contribute? Get started with Gitpod by clicking the button below</sup>
 
@@ -14,7 +14,7 @@ PlotiHub aims to be the leading open-source property management software in Keny
 
 > \[!IMPORTANT]
 >
-> Star us to show your support and love for django recall server.⭐️
+> Star us to show your support and love for the PlotiHub.⭐️
 
 <img src="assets/images/star.png" alt="PlotiHub star" width="100%">
 
@@ -30,10 +30,10 @@ PlotiHub aims to be the leading open-source property management software in Keny
 
 ### Code of Conduct
 
-This project adheres to the Contributor Covenant Code of Conduct, which outlines our community's expectations for professional and respectful behavior. All participants are required to read and follow the guidelines detailed in the [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) file for more information.
+This project adheres to the Contributor Covenant Code of Conduct, which outlines our community's professional and respectful behavior expectations. All participants are required to read and follow the guidelines detailed in the [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) file for more information.
 ### 🙌 Want to Contribute?
 
-Your contribution is highly valued. Before getting started, we kindly encourage you to review the CONTRIBUTING.md file. This will provide you with a better understanding of the project and how you can contribute effectively.
+Your contribution is highly valued. Before getting started, please review the CONTRIBUTING.md file. This will give you a better understanding of the project and how you can contribute effectively.
 
 We are open to all kinds of contributions. If you want to:
 
@@ -44,7 +44,7 @@ We are open to all kinds of contributions. If you want to:
 
 
 ## 🙏 Thanks to all Contributors
-Thanks a lot for spending your time in helping Django Reacall Server grow. Thanks a lot! ❤️
+Thanks a lot for spending your time in helping PlotiHub grow. Thanks a lot! ❤️
  <a href="https://github.com/PlotiHub/Plotihub-App/graphs/contributors"> <br />
    <img src="https://contrib.rocks/image?repo=PlotiHub/Plotihub-App" />
  </a>
