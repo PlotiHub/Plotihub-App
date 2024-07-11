@@ -1,0 +1,77 @@
+{% extends 'admin_template/base_template.html' %}
+{% block page_title %}
+Manage tenant
+{% endblock page_title %}
+{% block main_content %}
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+
+
+           <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">tenant Details</h3>
+
+                <div class="card-tools">
+                  <div class="input-group input-group-sm" style="width: 150px;">
+                    <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+
+                    <div class="input-group-append">
+                      <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body table-responsive p-0">
+                <table class="table table-hover text-nowrap">
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>First Name</th>
+                      <th>Last Name</th>
+                      <th>User Name</th>
+                      <th>Email</th>
+                      <th>Address</th>
+                      <th>Gender</th>
+                      <th>Profile Pic</th>
+                      <th>Session Year</th>
+                      <th>property</th>
+                      <th>Last Login</th>
+                      <th>Date Joined</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  {% for tenant in tenants %}
+                    <tr>
+                      <td>{{ tenant.admin.id }}</td>
+                      <td>{{ tenant.admin.first_name }}</td>
+                      <td>{{ tenant.admin.last_name }}</td>
+                      <td>{{ tenant.admin.username }}</td>
+                      <td>{{ tenant.admin.email }}</td>
+                      <td>{{ tenant.address }}</td>
+                      <td>{{ tenant.gender }}</td>
+                      <td><img src="{{ tenant.profile_pic }}" style="width:100px"/></td>
+                      <td>{{ tenant.session_year_id.session_start_year }} TO {{ tenant.session_year_id.session_end_year }}</td>
+                      <td>{{ tenant.property_id.property_name }}</td>
+                      <td>{{ tenant.admin.last_login }}</td>
+                      <td>{{ tenant.admin.date_joined }}</td>
+                      <td><a href="{% url 'edit_tenant' tenant_id=tenant.admin.id %}" class="btn btn-success">Edit</a></td>
+                    </tr>
+                  {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /.content -->
+{% endblock main_content %}
+

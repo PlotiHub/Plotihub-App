@@ -1,0 +1,73 @@
+{% extends 'admin_template/base_template.html' %}
+{% block page_title %}
+Edit caretaker | caretaker ID : {{ caretaker.id }}
+{% endblock page_title %}
+{% block main_content %}
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+          <div class="row">
+              <div class="col-md-12">
+            <!-- general form elements -->
+            <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title">Edit caretaker</h3>
+              </div>
+              <!-- /.card-header -->
+              <!-- form start -->
+              <form role="form" action="/edit_caretaker_save" method="post">
+                  {% csrf_token %}
+                <div class="card-body">
+                  <div class="form-group">
+                    <label>caretaker Name </label>
+                    <input type="text" class="form-control" name="caretaker_name" placeholder="Enter caretaker" value="{{ caretaker.caretaker_name }}">
+                    <input type="hidden" class="form-control" name="caretaker_id" placeholder="Enter caretaker" value="{{ caretaker.id }}">
+                  </div>
+                   <div class="form-group">
+                    <label>property </label>
+                    <select class="form-control" name="property">
+                        {% for property in properties %}
+                              <option value="{{ property.id }}" {% if property.id == caretaker.property_id.id %} selected {% endif %}>{{ property.property_name }}</option>
+                        {% endfor %}
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label>Staff</label>
+                    <select class="form-control" name="staff">
+                        {% for staff in staffs %}
+                          <option value="{{ staff.id }}" {% if staff.id == caretaker.staff_id.id %} selected {% endif %}>{{ staff.first_name }} {{ staff.last_name }}</option>
+                        {% endfor %}
+                    </select>
+                  </div>
+                   <div class="form-group">
+                      {% if messages %}
+                        {% for message in messages %}
+                        {% if message.tags == 'error' %}
+                        <div class="alert alert-danger" style="margin-top:10px">{{ message }}</div>
+                        {% endif %}
+                        {% if message.tags == 'success' %}
+                        <div class="alert alert-success" style="margin-top:10px">{{ message }}</div>
+                        {% endif %}
+                        {% endfor %}
+                      {% endif %}
+                    </div>
+
+                </div>
+                <!-- /.card-body -->
+
+                <div class="card-footer">
+                  <button type="submit" class="btn btn-primary btn-block">Save caretaker</button>
+                </div>
+              </form>
+            </div>
+            <!-- /.card -->
+
+
+
+          </div>
+          </div>
+      </div>
+    </section>
+    <!-- /.content -->
+{% endblock main_content %}
+
