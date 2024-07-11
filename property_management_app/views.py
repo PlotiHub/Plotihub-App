@@ -48,7 +48,7 @@ def doLogin(request):
             elif user.user_type == "2":
                 return HttpResponseRedirect(reverse("staff_home"))
             else:
-                return HttpResponseRedirect(reverse("student_home"))
+                return HttpResponseRedirect(reverse("tenant_home"))
         else:
             messages.error(request, "Invalid Login Details")
             return HttpResponseRedirect("/")
@@ -61,10 +61,10 @@ def Testurl(request):
 def signup_admin(request):
     return render(request,"signup_admin_page.html")
 
-def signup_student(request):
+def signup_tenant(request):
     courses=Courses.objects.all()
     session_years=SessionYearModel.object.all()
-    return render(request,"signup_student_page.html",{"courses":courses,"session_years":session_years})
+    return render(request,"signup_tenant_page.html",{"courses":courses,"session_years":session_years})
 
 def signup_staff(request):
     return render(request,"signup_staff_page.html")
@@ -99,7 +99,7 @@ def do_staff_signup(request):
         messages.error(request,"Failed to Create Staff")
         return HttpResponseRedirect(reverse("show_login"))
 
-def do_signup_student(request):
+def do_signup_tenant(request):
     first_name = request.POST.get("first_name")
     last_name = request.POST.get("last_name")
     username = request.POST.get("username")
@@ -118,16 +118,16 @@ def do_signup_student(request):
     #try:
     user = CustomUser.objects.create_user(username=username, password=password, email=email, last_name=last_name,
                                           first_name=first_name, user_type=3)
-    user.students.address = address
+    user.tenants.address = address
     course_obj = Courses.objects.get(id=course_id)
-    user.students.course_id = course_obj
+    user.tenants.course_id = course_obj
     session_year = SessionYearModel.object.get(id=session_year_id)
-    user.students.session_year_id = session_year
-    user.students.gender = sex
-    user.students.profile_pic = profile_pic_url
+    user.tenants.session_year_id = session_year
+    user.tenants.gender = sex
+    user.tenants.profile_pic = profile_pic_url
     user.save()
-    messages.success(request, "Successfully Added Student")
+    messages.success(request, "Successfully Added tenant")
     return HttpResponseRedirect(reverse("show_login"))
     #except:
-     #   messages.error(request, "Failed to Add Student")
+     #   messages.error(request, "Failed to Add tenant")
       #  return HttpResponseRedirect(reverse("show_login"))
