@@ -1,13 +1,26 @@
 {
-    "builds": [{
+    "version": 2,
+    "builds": [
+      {
         "src": "plotihub/wsgi.py",
         "use": "@vercel/python",
-        "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
-    }],
+        "config": { "maxLambdaSize": "15mb" },
+        "buildCommand": "./build.sh"
+      },
+      {
+        "src": "staticfiles/**/*",
+        "use": "@vercel/static"
+      }
+    ],
     "routes": [
-        {
-            "src": "/(.*)",
-            "dest": "plotihub/wsgi.py"
-        }
+      {
+        "src": "/static/(.*)",
+        "dest": "/staticfiles/$1"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "plotihub/wsgi.py"
+      }
     ]
-}
+  }
+  
