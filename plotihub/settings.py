@@ -76,7 +76,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'plotihub.wsgi.application'
+WSGI_APPLICATION = 'plotihub.wsgi.app'
 
 
 # Database
