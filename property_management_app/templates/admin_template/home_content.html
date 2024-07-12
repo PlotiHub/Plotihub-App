@@ -144,7 +144,7 @@ Home
               <div class="col-lg-12">
                   <div class="card card-success">
                   <div class="card-header">
-                    <h3 class="card-title">Staff Leaves vs Attendance</h3>
+                    <h3 class="card-title">Staff Leaves vs Arrears</h3>
 
                     <div class="card-tools">
                       <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
@@ -291,9 +291,9 @@ Home
                       options: pieOption3
                     });
 
-                        ///Staff Leave vs Attendance Bar Chart
-                        var attendance_present_list_staff={{ attendance_present_list_staff }};
-                        var attendance_absent_list_staff={{ attendance_absent_list_staff }};
+                        ///Staff Leave vs Arrears Bar Chart
+                        var Arrears_present_list_staff={{ Arrears_present_list_staff }};
+                        var Arrears_absent_list_staff={{ Arrears_absent_list_staff }};
                         var staff_name_list={{ staff_name_list|safe }};
                         var barChartData = {
                           labels  : staff_name_list,
@@ -307,10 +307,10 @@ Home
                               pointStrokeColor    : 'rgba(60,141,188,1)',
                               pointHighlightFill  : '#fff',
                               pointHighlightStroke: 'rgba(60,141,188,1)',
-                              data                : attendance_absent_list_staff
+                              data                : Arrears_absent_list_staff
                             },
                             {
-                              label               : 'Attendance',
+                              label               : 'Arrears',
                               backgroundColor     : 'rgba(210, 214, 222, 1)',
                               borderColor         : 'rgba(210, 214, 222, 1)',
                               pointRadius         : false,
@@ -318,7 +318,7 @@ Home
                               pointStrokeColor    : '#c1c7d1',
                               pointHighlightFill  : '#fff',
                               pointHighlightStroke: 'rgba(220,220,220,1)',
-                              data                : attendance_present_list_staff
+                              data                : Arrears_present_list_staff
                             },
                           ]
                         }
@@ -340,9 +340,9 @@ Home
                           options: barChartOptions
                         })
 
-                        //tenant Leaves vs Attendance
-                        var attendance_present_list_tenant={{ attendance_present_list_tenant }};
-                        var attendance_absent_list_tenant={{ attendance_absent_list_tenant }};
+                        //tenant Leaves vs Arrears
+                        var Arrears_present_list_tenant={{ Arrears_present_list_tenant }};
+                        var Arrears_absent_list_tenant={{ Arrears_absent_list_tenant }};
                         var tenant_name_list={{ tenant_name_list|safe }};
                         var barChartData2 = {
                           labels  : tenant_name_list,
@@ -356,10 +356,10 @@ Home
                               pointStrokeColor    : 'rgba(60,141,188,1)',
                               pointHighlightFill  : '#fff',
                               pointHighlightStroke: 'rgba(60,141,188,1)',
-                              data                : attendance_absent_list_tenant
+                              data                : Arrears_absent_list_tenant
                             },
                             {
-                              label               : 'Attendance',
+                              label               : 'Arrears',
                               backgroundColor     : 'rgba(210, 214, 222, 1)',
                               borderColor         : 'rgba(210, 214, 222, 1)',
                               pointRadius         : false,
@@ -367,7 +367,7 @@ Home
                               pointStrokeColor    : '#c1c7d1',
                               pointHighlightFill  : '#fff',
                               pointHighlightStroke: 'rgba(220,220,220,1)',
-                              data                : attendance_present_list_tenant
+                              data                : Arrears_present_list_tenant
                             },
                           ]
                         }

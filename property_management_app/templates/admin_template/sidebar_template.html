@@ -26,7 +26,7 @@
                with font-awesome or any other icon font library -->
           <li class="nav-item">
             {% url 'admin_home' as admin_home %}
-            <a href="{{ admin_home }}" class="nav-link {% if request.path == admin_home %} active {% endif %}">
+            <!-- <a href="{{ admin_home }}" class="nav-link {% if request.path == admin_home %} active {% endif %}"> -->
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Home
@@ -36,7 +36,7 @@
 
           <li class="nav-item">
             {% url 'add_staff' as add_staff %}
-            <a href="{{ add_staff }}" class="nav-link {% if request.path == add_staff %} active {% endif %}">
+            <!-- <a href="{{ add_staff }}" class="nav-link {% if request.path == add_staff %} active {% endif %}"> -->
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Add Staff
@@ -46,7 +46,7 @@
            <li class="nav-item">
               {% url 'manage_staff' as manage_staff %}
             {% url 'edit_staff' staff_id=id as edit_staff %}
-            <a href="{% url 'manage_staff' %}" class="nav-link {% if request.path == manage_staff %} active {% endif %} {% if request.path == edit_staff %} active {% endif %}">
+            <!-- <a href="{% url 'manage_staff' %}" class="nav-link {% if request.path == manage_staff %} active {% endif %} {% if request.path == edit_staff %} active {% endif %}"> -->
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Manage Staff
@@ -55,7 +55,7 @@
           </li>
           <li class="nav-item">
               {% url 'add_tenant' as add_tenant %}
-            <a href="{% url 'add_tenant' %}" class="nav-link {% if request.path == add_tenant %} active {% endif %}">
+            <!-- <a href="{% url 'add_tenant' %}" class="nav-link {% if request.path == add_tenant %} active {% endif %}"> -->
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Add tenant
@@ -65,7 +65,7 @@
           <li class="nav-item">
               {% url 'manage_tenant' as manage_tenant %}
               {% url 'edit_tenant' tenant_id=id as edit_tenant %}
-            <a href="{% url 'manage_tenant' %}" class="nav-link {% if request.path == manage_tenant %} active {% endif %} {% if request.path == edit_tenant %} active {% endif %}">
+            <!-- <a href="{% url 'manage_tenant' %}" class="nav-link {% if request.path == manage_tenant %} active {% endif %} {% if request.path == edit_tenant %} active {% endif %}"> -->
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Manage tenants
@@ -74,7 +74,7 @@
           </li>
           <li class="nav-item">
             {% url 'add_property' as add_property %}
-            <a href="{% url 'add_property' %}" class="nav-link {% if request.path == add_property %} active {% endif %}">
+            <!-- <a href="{% url 'add_property' %}" class="nav-link {% if request.path == add_property %} active {% endif %}"> -->
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Add property
@@ -84,7 +84,7 @@
           <li class="nav-item">
             {% url 'manage_property' as manage_property %}
               {% url 'edit_property' property_id=id as edit_property %}
-            <a href="{% url 'manage_property' %}" class="nav-link {% if request.path == manage_property %} active {% endif %} {% if request.path == edit_property %} active {% endif %}">
+            <!-- <a href="{% url 'manage_property' %}" class="nav-link {% if request.path == manage_property %} active {% endif %} {% if request.path == edit_property %} active {% endif %}"> -->
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Manage property
@@ -93,7 +93,7 @@
           </li>
           <li class="nav-item">
             {% url 'add_subject' as add_subject %}
-            <a href="{% url 'add_subject' %}" class="nav-link {% if request.path == add_subject %} active {% endif %}">
+            <!-- <a href="{% url 'add_subject' %}" class="nav-link {% if request.path == add_subject %} active {% endif %}"> -->
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Add Subject
@@ -101,9 +101,9 @@
             </a>
           </li>
           <li class="nav-item">
-            {% url 'manage_subject' as manage_subject %}
+            {% url 'manage_caretaker' as manage_caretaker %}
             {% url 'edit_subject' subject_id=id as edit_subject %}
-            <a href="{% url 'manage_subject' %}" class="nav-link {% if request.path == manage_subject %} active {% endif %} {% if request.path == edit_subject %} active {% endif %} ">
+            <!-- <a href="{% url 'manage_caretaker' %}" class="nav-link {% if request.path == manage_caretaker %} active {% endif %} {% if request.path == edit_subject %} active {% endif %} "> -->
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Manage Subject
@@ -112,7 +112,7 @@
           </li>
           <li class="nav-item">
             {% url 'manage_session' as manage_session %}
-            <a href="{% url 'manage_session' %}" class="nav-link {% if request.path == manage_session %} active {% endif %} ">
+            <!-- <a href="{% url 'manage_session' %}" class="nav-link {% if request.path == manage_session %} active {% endif %} "> -->
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Manage Session Year
@@ -122,7 +122,7 @@
 
            <li class="nav-item">
              {% url 'tenant_feedback_message' as tenant_feedback_message %}
-            <a href="{% url 'tenant_feedback_message' %}" class="nav-link {% if request.path == tenant_feedback_message %} active {% endif %}">
+            <!-- <a href="{% url 'tenant_feedback_message' %}" class="nav-link {% if request.path == tenant_feedback_message %} active {% endif %}"> -->
               <i class="nav-icon fas fa-th"></i>
               <p>
                 tenant Feedback
@@ -131,7 +131,7 @@
           </li>
            <li class="nav-item">
                {% url 'staff_feedback_message' as staff_feedback_message %}
-            <a href="{% url 'staff_feedback_message' %}" class="nav-link {% if request.path == staff_feedback_message %} active {% endif %}">
+            <!-- <a href="{% url 'staff_feedback_message' %}" class="nav-link {% if request.path == staff_feedback_message %} active {% endif %}"> -->
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Staff Feedback
@@ -140,7 +140,7 @@
           </li>
            <li class="nav-item">
                {% url 'tenant_leave_view' as tenant_leave_view %}
-            <a href="{% url 'tenant_leave_view' %}" class="nav-link {% if request.path == tenant_leave_view %} active {% endif %}">
+            <!-- <a href="{% url 'tenant_leave_view' %}" class="nav-link {% if request.path == tenant_leave_view %} active {% endif %}"> -->
               <i class="nav-icon fas fa-th"></i>
               <p>
                 tenant Leave
@@ -149,7 +149,7 @@
           </li>
             <li class="nav-item">
                  {% url 'staff_leave_view' as staff_leave_view %}
-            <a href="{% url 'staff_leave_view' %}" class="nav-link {% if request.path == staff_leave_view %} active {% endif %}">
+            <!-- <a href="{% url 'staff_leave_view' %}" class="nav-link {% if request.path == staff_leave_view %} active {% endif %}"> -->
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Staff Leave
@@ -157,17 +157,17 @@
             </a>
           </li>
           <li class="nav-item">
-            {% url 'admin_view_attendance' as admin_view_attendance %}
-             <a href="{% url 'admin_view_attendance' %}" class="nav-link {% if request.path == admin_view_attendance %} active {% endif %}">
+            {% url 'admin_view_Arrears' as admin_view_Arrears %}
+             <!-- <a href="{% url 'admin_view_Arrears' %}" class="nav-link {% if request.path == admin_view_Arrears %} active {% endif %}"> -->
               <i class="nav-icon fas fa-th"></i>
               <p>
-                View Attendance
+                View Arrears
               </p>
             </a>
           </li>
           <li class="nav-item">
             {% url 'admin_send_notification_staff' as admin_send_notification_staff %}
-             <a href="{% url 'admin_send_notification_staff' %}" class="nav-link {% if request.path == admin_send_notification_staff %} active {% endif %}">
+             <!-- <a href="{% url 'admin_send_notification_staff' %}" class="nav-link {% if request.path == admin_send_notification_staff %} active {% endif %}"> -->
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Send Staff Notification
@@ -176,7 +176,7 @@
           </li>
           <li class="nav-item">
             {% url 'admin_send_notification_tenant' as admin_send_notification_tenant %}
-             <a href="{% url 'admin_send_notification_tenant' %}" class="nav-link {% if request.path == admin_send_notification_tenant %} active {% endif %}">
+             <!-- <a href="{% url 'admin_send_notification_tenant' %}" class="nav-link {% if request.path == admin_send_notification_tenant %} active {% endif %}"> -->
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Send tenant Notification

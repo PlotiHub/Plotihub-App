@@ -34,12 +34,12 @@
             </a>
           </li>
           <li class="nav-item">
-            {% url 'tenant_view_attendance' as tenant_view_attendance %}
-            {% url 'tenant_view_attendance_post' as tenant_view_attendance_post %}
-            <a href="{{ tenant_view_attendance }}" class="nav-link {% if request.path == tenant_view_attendance %} active {% endif %} {% if request.path == tenant_view_attendance_post %} active {% endif %}">
+            {% url 'tenant_view_Arrears' as tenant_view_Arrears %}
+            {% url 'tenant_view_Arrears_post' as tenant_view_Arrears_post %}
+            <a href="{{ tenant_view_Arrears }}" class="nav-link {% if request.path == tenant_view_Arrears %} active {% endif %} {% if request.path == tenant_view_Arrears_post %} active {% endif %}">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                View Attendance
+                View Arrears
               </p>
             </a>
           </li>

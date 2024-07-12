@@ -1263,7 +1263,7 @@ Docs & License: https://fullcalendar.io/
         function EventDragging(settings) {
             var _this = _super.call(this, settings) || this;
             // internal state
-            _this.subjectSeg = null; // the seg being selected/dragged
+            _this.Caretakerseg = null; // the seg being selected/dragged
             _this.isDragging = false;
             _this.eventRange = null;
             _this.relevantEvents = null; // the events being dragged
@@ -1275,8 +1275,8 @@ Docs & License: https://fullcalendar.io/
                 var _a = _this, component = _a.component, dragging = _a.dragging;
                 var mirror = dragging.mirror;
                 var initialCalendar = component.calendar;
-                var subjectSeg = _this.subjectSeg = core.getElSeg(ev.subjectEl);
-                var eventRange = _this.eventRange = subjectSeg.eventRange;
+                var Caretakerseg = _this.Caretakerseg = core.getElSeg(ev.subjectEl);
+                var eventRange = _this.eventRange = Caretakerseg.eventRange;
                 var eventInstanceId = eventRange.instance.instanceId;
                 _this.relevantEvents = core.getRelevantEvents(initialCalendar.state.eventStore, eventInstanceId);
                 dragging.minDistance = ev.isTouch ? 0 : component.opt('eventDragMinDistance');
@@ -1313,7 +1313,7 @@ Docs & License: https://fullcalendar.io/
                     initialCalendar.unselect(ev); // unselect *date* selection
                     initialCalendar.publiclyTrigger('eventDragStart', [
                         {
-                            el: _this.subjectSeg.el,
+                            el: _this.Caretakerseg.el,
                             event: new core.EventApi(initialCalendar, eventRange.def, eventRange.instance),
                             jsEvent: ev.origEvent,
                             view: _this.component.view
@@ -1337,7 +1337,7 @@ Docs & License: https://fullcalendar.io/
                     affectedEvents: relevantEvents,
                     mutatedEvents: core.createEmptyEventStore(),
                     isEvent: true,
-                    origSeg: _this.subjectSeg
+                    origSeg: _this.Caretakerseg
                 };
                 if (hit) {
                     var receivingComponent = hit.component;
@@ -1401,7 +1401,7 @@ Docs & License: https://fullcalendar.io/
                     _this.clearDrag(); // must happen after revert animation
                     initialCalendar_1.publiclyTrigger('eventDragStop', [
                         {
-                            el: _this.subjectSeg.el,
+                            el: _this.Caretakerseg.el,
                             event: eventApi,
                             jsEvent: ev.origEvent,
                             view: initialView
@@ -1527,7 +1527,7 @@ Docs & License: https://fullcalendar.io/
             }
         };
         EventDragging.prototype.cleanup = function () {
-            this.subjectSeg = null;
+            this.Caretakerseg = null;
             this.isDragging = false;
             this.eventRange = null;
             this.relevantEvents = null;
@@ -1582,7 +1582,7 @@ Docs & License: https://fullcalendar.io/
         function EventDragging(settings) {
             var _this = _super.call(this, settings) || this;
             // internal state
-            _this.draggingSeg = null; // TODO: rename to resizingSeg? subjectSeg?
+            _this.draggingSeg = null; // TODO: rename to resizingSeg? Caretakerseg?
             _this.eventRange = null;
             _this.relevantEvents = null;
             _this.validMutation = null;
