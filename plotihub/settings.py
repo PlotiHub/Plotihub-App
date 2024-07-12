@@ -33,9 +33,10 @@ ALLOWED_HOSTS = ['.vercel.app']
 MEDIA_URL="/media/"
 MEDIA_ROOT=os.path.join(BASE_DIR,"media")
 
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
+# Static files (CSS, JavaScript, Images)
+STATIC_URL = 'static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 # Application definition
 
@@ -50,9 +51,8 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    #===Enable Only Making Project Live on Heroku==
-     #'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -136,7 +136,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = '/property_management_app/static/'
 AUTH_USER_MODEL="property_management_app.CustomUser"
 # AUTHENTICATION_BACKENDS=['property_management_app.EmailBackEnd.EmailBackEnd']
 AUTHENTICATION_BACKENDS = (
