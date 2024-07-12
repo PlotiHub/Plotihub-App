@@ -1,18 +1,16 @@
+import os
 import datetime
 import json
-import os
-
 import requests
+# from plotihub import settings
+from django.urls import reverse
+from django.shortcuts import render
 from django.contrib import messages
-from django.contrib.auth import authenticate, login, logout, get_backends
 from django.core.files.storage import FileSystemStorage
 from django.http import HttpResponse, HttpResponseRedirect
-from django.shortcuts import render
-from django.urls import reverse
-
 from property_management_app.EmailBackEnd import EmailBackEnd
+from django.contrib.auth import authenticate, login, logout, get_backends
 from property_management_app.models import CustomUser, Properties, SessionYearModel
-# from plotihub import settings
 
 
 def showDemoPage(request):
@@ -20,23 +18,6 @@ def showDemoPage(request):
 
 def ShowLoginPage(request):
     return render(request,"login_page.html")
-
-# def doLogin(request):
-#     # Your existing code for authentication
-#     username = request.POST.get('username')
-#     password = request.POST.get('password')
-#     user = authenticate(request, username=username, password=password)
-    
-#     if user is not None:
-#         # Specify the backend
-#         user.backend = 'django.contrib.auth.backends.ModelBackend'
-#         login(request, user)
-#         # Redirect to the appropriate page
-#         return HttpResponseRedirect(reverse('home'))
-#     else:
-#         messages.error(request, "Invalid login credentials")
-#         return HttpResponseRedirect(reverse('login'))
-
 
 def doLogin(request):
     if request.method != "POST":

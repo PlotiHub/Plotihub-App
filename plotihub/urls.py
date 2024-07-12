@@ -28,7 +28,6 @@ urlpatterns = [
     path('do_admin_signup',views.do_admin_signup,name="do_admin_signup"),
     path('do_staff_signup',views.do_staff_signup,name="do_staff_signup"),
     path('do_signup_tenant',views.do_signup_tenant,name="do_signup_tenant"),
-    path('admin/', admin.site.urls),
     path('accounts/',include('django.contrib.auth.urls')),
     path('',views.ShowLoginPage,name="show_login"),
     path('get_user_details', views.GetUserDetails),
