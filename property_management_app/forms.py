@@ -1,6 +1,5 @@
 from django import forms
 from django.forms import ChoiceField
-
 from property_management_app.models import Properties, SessionYearModel, Caretakers, Tenants
 
 class ChoiceNoValidation(ChoiceField):
