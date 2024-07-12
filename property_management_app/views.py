@@ -2,16 +2,16 @@ import datetime
 import json
 import os
 
-# import requests
+import requests
 from django.contrib import messages
-from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth import authenticate, login, logout, get_backends
 from django.core.files.storage import FileSystemStorage
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
 
 from property_management_app.EmailBackEnd import EmailBackEnd
-# from property_management_app.models import CustomUser, Courses, SessionYearModel
+from property_management_app.models import CustomUser, Properties, SessionYearModel
 # from plotihub import settings
 
 
@@ -20,6 +20,23 @@ def showDemoPage(request):
 
 def ShowLoginPage(request):
     return render(request,"login_page.html")
+
+# def doLogin(request):
+#     # Your existing code for authentication
+#     username = request.POST.get('username')
+#     password = request.POST.get('password')
+#     user = authenticate(request, username=username, password=password)
+    
+#     if user is not None:
+#         # Specify the backend
+#         user.backend = 'django.contrib.auth.backends.ModelBackend'
+#         login(request, user)
+#         # Redirect to the appropriate page
+#         return HttpResponseRedirect(reverse('home'))
+#     else:
+#         messages.error(request, "Invalid login credentials")
+#         return HttpResponseRedirect(reverse('login'))
+
 
 def doLogin(request):
     if request.method != "POST":
@@ -42,18 +59,27 @@ def doLogin(request):
         user = EmailBackEnd().authenticate(request, username=email, password=password)
         
         if user is not None:
+            user.backend = 'django.contrib.auth.backends.ModelBackend'
             login(request, user)
             if user.user_type == "1":
                 return HttpResponseRedirect('/admin_home')
             elif user.user_type == "2":
                 return HttpResponseRedirect(reverse("staff_home"))
             else:
-                return HttpResponseRedirect(reverse("tenant_home"))
+                return HttpResponseRedirect(reverse("student_home"))
         else:
             messages.error(request, "Invalid Login Details")
             return HttpResponseRedirect("/")
-        
-
+  
+def GetUserDetails(request):
+    if request.user!=None:
+        return HttpResponse("User : "+request.user.email+" usertype : "+str(request.user.user_type))
+    else:
+        return HttpResponse("Please Login First")
+    
+def logout_user(request):
+    logout(request)
+    return HttpResponseRedirect("/")   
 
 def Testurl(request):
     return HttpResponse("Ok")
@@ -62,9 +88,9 @@ def signup_admin(request):
     return render(request,"signup_admin_page.html")
 
 def signup_tenant(request):
-    courses=Courses.objects.all()
+    properties=Properties.objects.all()
     session_years=SessionYearModel.object.all()
-    return render(request,"signup_tenant_page.html",{"courses":courses,"session_years":session_years})
+    return render(request,"signup_tenant_page.html",{"Properties":properties,"session_years":session_years})
 
 def signup_staff(request):
     return render(request,"signup_staff_page.html")
@@ -119,8 +145,8 @@ def do_signup_tenant(request):
     user = CustomUser.objects.create_user(username=username, password=password, email=email, last_name=last_name,
                                           first_name=first_name, user_type=3)
     user.tenants.address = address
-    course_obj = Courses.objects.get(id=course_id)
-    user.tenants.course_id = course_obj
+    property_obj = Properties.objects.get(id=course_id)
+    user.tenants.course_id = property_obj
     session_year = SessionYearModel.object.get(id=session_year_id)
     user.tenants.session_year_id = session_year
     user.tenants.gender = sex

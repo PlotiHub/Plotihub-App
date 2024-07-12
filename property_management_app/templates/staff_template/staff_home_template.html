@@ -18,7 +18,7 @@ Home
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
               </div>
-              <a href="{% url 'staff_take_attendance' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="{% url 'staff_take_Arrears' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -26,14 +26,14 @@ Home
             <!-- small box -->
             <div class="small-box bg-success">
               <div class="inner">
-                <h3>{{ attendance_count }}</h3>
+                <h3>{{ Arrears_count }}</h3>
 
-                <p>Total Attendance Taken</p>
+                <p>Total Arrears Taken</p>
               </div>
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
               </div>
-              <a href="{% url 'staff_take_attendance' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="{% url 'staff_take_Arrears' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -58,7 +58,7 @@ Home
               <div class="inner">
                 <h3>{{ subject_count }}</h3>
 
-                <p>Total Subjects</p>
+                <p>Total Caretakers</p>
               </div>
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
@@ -72,7 +72,7 @@ Home
               <div class="col-lg-6">
                   <div class="card card-danger">
                   <div class="card-header">
-                    <h3 class="card-title">Attendance VS Leave Chart</h3>
+                    <h3 class="card-title">Arrears VS Leave Chart</h3>
 
                     <div class="card-tools">
                       <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
@@ -110,7 +110,7 @@ Home
               <div class="col-lg-12">
                    <div class="card card-info">
                   <div class="card-header">
-                    <h3 class="card-title">tenant Attendance Data</h3>
+                    <h3 class="card-title">tenant Arrears Data</h3>
 
                     <div class="card-tools">
                       <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
@@ -136,12 +136,12 @@ Home
     $(document).ready(function(){
            var pieData  = {
               labels: [
-                  'Attendance',
+                  'Arrears',
                   'Leave'
               ],
               datasets: [
                 {
-                  data: [{{ attendance_count }},{{ leave_count }}],
+                  data: [{{ Arrears_count }},{{ leave_count }}],
                   backgroundColor : ['#f56954', '#00a65a'],
                 }
               ]
@@ -160,7 +160,7 @@ Home
             });
 
 
-                var attendance_list={{ attendance_list }};
+                var Arrears_list={{ Arrears_list }};
                 var subject_list={{ subject_list|safe }};
                 var barChartData = {
                   labels  : subject_list,
@@ -174,7 +174,7 @@ Home
                       pointStrokeColor    : 'rgba(60,141,188,1)',
                       pointHighlightFill  : '#fff',
                       pointHighlightStroke: 'rgba(60,141,188,1)',
-                      data                : attendance_list
+                      data                : Arrears_list
                     }
                   ]
                 }
@@ -202,7 +202,7 @@ Home
                   labels  : tenant_list,
                   datasets: [
                     {
-                      label               : 'tenant Attendance Chart For Present',
+                      label               : 'tenant Arrears Chart For Present',
                       backgroundColor     : 'rgba(60,141,188,0.9)',
                       borderColor         : 'rgba(60,141,188,0.8)',
                       pointRadius          : false,
@@ -213,7 +213,7 @@ Home
                       data                : present_list
                     },
                     {
-                      label               : 'tenant Attendance Chart for Absent',
+                      label               : 'tenant Arrears Chart for Absent',
                       backgroundColor     : 'rgba(200,141,188,0.9)',
                       borderColor         : 'rgba(200,141,188,0.8)',
                       pointRadius          : false,

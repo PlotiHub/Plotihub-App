@@ -21,14 +21,14 @@ Home
             <!-- small box -->
             <div class="small-box bg-info">
               <div class="inner">
-                <h3>{{ total_attendance }}</h3>
+                <h3>{{ total_Arrears }}</h3>
 
-                <p>Total Attendance</p>
+                <p>Total Arrears</p>
               </div>
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
               </div>
-              <a href="{% url 'tenant_view_attendance' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="{% url 'tenant_view_Arrears' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -36,14 +36,14 @@ Home
             <!-- small box -->
             <div class="small-box bg-success">
               <div class="inner">
-                <h3>{{ attendance_absent }}</h3>
+                <h3>{{ Arrears_absent }}</h3>
 
                 <p>Absent</p>
               </div>
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
               </div>
-              <a href="{% url 'tenant_view_attendance' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="{% url 'tenant_view_Arrears' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -51,14 +51,14 @@ Home
             <!-- small box -->
             <div class="small-box bg-warning">
               <div class="inner">
-                <h3>{{ attendance_present }}</h3>
+                <h3>{{ Arrears_present }}</h3>
 
                 <p>Present</p>
               </div>
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
               </div>
-              <a href="{% url 'tenant_view_attendance' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="{% url 'tenant_view_Arrears' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -66,9 +66,9 @@ Home
             <!-- small box -->
             <div class="small-box bg-danger">
               <div class="inner">
-                <h3>{{ subjects }}</h3>
+                <h3>{{ Caretakers }}</h3>
 
-                <p>Total Subjects</p>
+                <p>Total Caretakers</p>
               </div>
               <div class="icon">
                 <i class="ion ion-pie-graph"></i>
@@ -82,7 +82,7 @@ Home
               <div class="col-lg-6">
                   <div class="card card-danger">
                       <div class="card-header">
-                        <h3 class="card-title">Attendance Chart</h3>
+                        <h3 class="card-title">Arrears Chart</h3>
 
                         <div class="card-tools">
                           <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
@@ -100,7 +100,7 @@ Home
               <div class="col-lg-6">
                   <div class="card card-success">
                       <div class="card-header">
-                        <h3 class="card-title">Attendance Statistics</h3>
+                        <h3 class="card-title">Arrears Statistics</h3>
 
                         <div class="card-tools">
                           <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
@@ -126,7 +126,7 @@ Home
 <script>
     $(document).ready(function(){
 
-            var subjects={{ data_name|safe }};
+            var Caretakers={{ data_name|safe }};
             var data1={{ data1 }};
             var data2={{ data2 }};
             //Data Set for PIE CHart
@@ -138,7 +138,7 @@ Home
               ],
               datasets: [
                 {
-                  data: [{{ attendance_absent }},{{ attendance_present }},{{ total_attendance }}],
+                  data: [{{ Arrears_absent }},{{ Arrears_present }},{{ total_Arrears }}],
                   backgroundColor : ['#f56954', '#00a65a','#ffc107'],
                 }
               ]
@@ -147,7 +147,7 @@ Home
 
             //Data Set for Bar Chart
                 var areaChartData = {
-                  labels  : subjects,
+                  labels  : Caretakers,
                   datasets: [
                     {
                       label               : 'Present in Class',

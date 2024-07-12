@@ -8,11 +8,8 @@ class EmailBackEnd(BaseBackend):
             user = UserModel.objects.get(email=username)
             if user.check_password(password):
                 return user
-        except UserModel.MultipleObjectsReturned:
-            return None
         except UserModel.DoesNotExist:
             return None
-        return None
 
     def get_user(self, user_id):
         UserModel = get_user_model()

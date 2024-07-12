@@ -1,7 +1,7 @@
 {% extends 'tenant_template/base_template.html' %}
 {% block custom_css %}
 <style>
-.col-lg-3.attendance_div_red {
+.col-lg-3.Arrears_div_red {
     padding: 10px;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -14,7 +14,7 @@
     margin-top: 10px;
     margin-bottom: 10px;
 }
-.col-lg-3.attendance_div_green {
+.col-lg-3.Arrears_div_green {
     padding: 10px;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -30,7 +30,7 @@
 </style>
 {% endblock custom_css %}
 {% block page_title %}
-Attendance Data
+Arrears Data
 {% endblock page_title %}
 {% block main_content %}
     <!-- Main content -->
@@ -41,30 +41,30 @@ Attendance Data
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">View Attendance</h3>
+                <h3 class="card-title">View Arrears</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
                 <div class="card-body">
                     <div class="row">
-                    {% if attendance_reports %}
-                    {% for attendance_report in attendance_reports %}
-                       {% if attendance_report.status == True %}
-                        <div class="col-lg-3 attendance_div_green">
-                            <b>Date : {{ attendance_report.attendance_id.attendance_date }}</b>
+                    {% if Arrears_reports %}
+                    {% for Arrears_report in Arrears_reports %}
+                       {% if Arrears_report.status == True %}
+                        <div class="col-lg-3 Arrears_div_green">
+                            <b>Date : {{ Arrears_report.Arrears_id.Arrears_date }}</b>
                             <br>
                             <b>[ Status : Present ]</b>
                         </div>
                         {% else %}
-                        <div class="col-lg-3 attendance_div_red">
-                            <b>Date : {{ attendance_report.attendance_id.attendance_date }}</b>
+                        <div class="col-lg-3 Arrears_div_red">
+                            <b>Date : {{ Arrears_report.Arrears_id.Arrears_date }}</b>
                             <br>
                             <b>[ Status : Absent ]</b>
                         </div>
                         {% endif %}
                     {% endfor %}
                     {% else %}
-                        <div class="alert alert-danger text-center">No Attendance Data Found!</div>
+                        <div class="alert alert-danger text-center">No Arrears Data Found!</div>
                      {% endif %}
                     </div>
                 </div>

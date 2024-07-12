@@ -19,7 +19,7 @@ View Arrears
                    <div class="form-group">
                     <label>Subject </label>
                     <select class="form-control" name="subject" id="subject">
-                        {% for subject in subjects %}
+                        {% for subject in Caretakers %}
                           <option value="{{ subject.id }}">{{ subject.subject_name }}</option>
                         {% endfor %}
                     </select>

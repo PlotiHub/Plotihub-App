@@ -136,9 +136,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
-# AUTH_USER_MODEL="tenant_management_app.CustomUser"
-AUTHENTICATION_BACKENDS=['property_management_app.EmailBackEnd.EmailBackEnd']
-
+AUTH_USER_MODEL="property_management_app.CustomUser"
+# AUTHENTICATION_BACKENDS=['property_management_app.EmailBackEnd.EmailBackEnd']
+AUTHENTICATION_BACKENDS = (
+    'property_management_app.EmailBackEnd.EmailBackEnd',  # Replace 'your_app' with the actual app name
+    'django.contrib.auth.backends.ModelBackend',
+)
 EMAIL_BACKEND="django.core.mail.backends.filebased.EmailBackend"
 # EMAIL_FILE_PATH=os.path.join(BASE_DIR,"sent_mails")
 
