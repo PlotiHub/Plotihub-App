@@ -33,7 +33,7 @@ PlotiHub aims to be the leading open-source property management software in Keny
 This project adheres to the Contributor Covenant Code of Conduct, which outlines our community's professional and respectful behavior expectations. All participants are required to read and follow the guidelines detailed in the [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) file for more information.
 ### 🙌 Want to Contribute?
 
-Your contribution is highly valued. Before getting started, please review the CONTRIBUTING.md file. This will give you a better understanding of the project and how you can contribute effectively.
+Your contribution is highly valued. Before getting started, please review the [CONTRIBUTING.md](./CONTRIBUTING.md) file. This will give you a better understanding of the project and how you can contribute effectively.
 
 We are open to all kinds of contributions. If you want to:
 
