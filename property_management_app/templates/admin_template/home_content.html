@@ -193,7 +193,7 @@ Home
             var pieData        = {
                   labels: [
                       'tenants',
-                      'Staffs'
+                      'staffs'
                   ],
                   datasets: [
                     {
@@ -216,15 +216,15 @@ Home
               options: pieOptions
             });
 
-            //Second Chart for Total Subject in Each property
-                var subject_count_list={{ subject_count_list }};
+            //Second Chart for Total caretaker in Each property
+                var caretaker_count_list={{ caretaker_count_list }};
                 var property_name_list={{ property_name_list|safe }};
                 var donutChartCanvas = $('#donutChart').get(0).getContext('2d')
                 var donutData        = {
                   labels:property_name_list,
                   datasets: [
                     {
-                      data: subject_count_list,
+                      data: caretaker_count_list,
                       backgroundColor : ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de'],
                     }
                   ]
@@ -266,15 +266,15 @@ Home
                       options: pieOptions2
                     });
 
-                //show total tenant in each Subject
-                var tenant_count_list_in_subject={{ tenant_count_list_in_subject }};
-                var subject_list={{ subject_list|safe }};
+                //show total tenant in each caretaker
+                var tenant_count_list_in_caretaker={{ tenant_count_list_in_caretaker }};
+                var caretaker_list={{ caretaker_list|safe }};
 
                   var pieData3  = {
-                          labels:subject_list,
+                          labels:caretaker_list,
                           datasets: [
                             {
-                              data: tenant_count_list_in_subject,
+                              data: tenant_count_list_in_caretaker,
                               backgroundColor : ['#f56954', '#00a65a','#aa00ff', '#ff3d00','#bf360c','#ffff00','#00e676','#40c4ff','#f56954', '#00a65a','#aa00ff', '#ff3d00','#bf360c','#ffff00','#00e676','#40c4ff'],
                             }
                           ]
