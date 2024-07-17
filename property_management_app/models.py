@@ -43,7 +43,7 @@ class Properties(models.Model):
 
 class Caretakers(models.Model):
     id=models.AutoField(primary_key=True)
-    subject_name=models.CharField(max_length=255)
+    caretaker_name=models.CharField(max_length=255)
     property_id=models.ForeignKey(Properties,on_delete=models.CASCADE,default=1)
     staff_id=models.ForeignKey(CustomUser,on_delete=models.CASCADE)
     created_at=models.DateTimeField(auto_now_add=True)
@@ -142,7 +142,7 @@ class NotificationStaffs(models.Model):
 class TenantResult(models.Model):
     id=models.AutoField(primary_key=True)
     tenant_id=models.ForeignKey(Tenants,on_delete=models.CASCADE)
-    subject_id=models.ForeignKey(Caretakers,on_delete=models.CASCADE)
+    caretaker_id=models.ForeignKey(Caretakers,on_delete=models.CASCADE)
     subject_exam_marks=models.FloatField(default=0)
     subject_assignment_marks=models.FloatField(default=0)
     created_at=models.DateField(auto_now_add=True)

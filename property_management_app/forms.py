@@ -26,9 +26,9 @@ class AddTenantForm(forms.Form):
 
     def __init__(self, *args, **kwargs):
         super(AddTenantForm, self).__init__(*args, **kwargs)
-        self.fields['course'] = forms.ChoiceField(
-            label="Course",
-            choices=[(course.id, course.course_name) for course in Properties.objects.all()],
+        self.fields['property'] = forms.ChoiceField(
+            label="property",
+            choices=[(property.id, property.property_name) for property in Properties.objects.all()],
             widget=forms.Select(attrs={"class": "form-control"})
         )
         self.fields['session_year_id'] = forms.ChoiceField(
@@ -44,14 +44,14 @@ class EditTenantForm(forms.Form):
     address=forms.CharField(label="Address",max_length=50,widget=forms.TextInput(attrs={"class":"form-control"}))
 
 
-    course_list=[]
+    property_list=[]
     try:
         Properties = Properties.objects.all()
-        for course in Properties:
-            small_course=(course.id,course.course_name)
-            course_list.append(small_course)
+        for property in Properties:
+            small_property=(property.id,property.property_name)
+            property_list.append(small_property)
     except:
-        course_list=[]
+        property_list=[]
 
     session_list = []
     try:
@@ -69,7 +69,7 @@ class EditTenantForm(forms.Form):
         ("Female","Female")
     )
 
-    course=forms.ChoiceField(label="Course",choices=course_list,widget=forms.Select(attrs={"class":"form-control"}))
+    property=forms.ChoiceField(label="property",choices=property_list,widget=forms.Select(attrs={"class":"form-control"}))
     sex=forms.ChoiceField(label="Sex",choices=gender_choice,widget=forms.Select(attrs={"class":"form-control"}))
     session_year_id=forms.ChoiceField(label="Session Year",choices=session_list,widget=forms.Select(attrs={"class":"form-control"}))
     profile_pic=forms.FileField(label="Profile Pic",max_length=50,widget=forms.FileInput(attrs={"class":"form-control"}),required=False)
